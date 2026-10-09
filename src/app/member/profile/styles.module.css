@@ -1,0 +1,469 @@
+.page {
+  min-height: 100vh;
+  color: #14283d;
+  background:
+    radial-gradient(circle at 5% 0%, rgba(36, 117, 169, 0.08), transparent 25rem),
+    #f4f7fb;
+}
+
+.header {
+  min-height: 5.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 clamp(1.25rem, 5vw, 5rem);
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid #e6edf4;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: inherit;
+}
+
+.brandMark {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.8rem;
+  color: #fff;
+  background: linear-gradient(145deg, #164b76, #1d7299);
+  box-shadow: 0 6px 14px rgba(22, 75, 118, 0.18);
+}
+
+.brandText strong,
+.brandText span {
+  display: block;
+}
+
+.brandText strong {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+}
+
+.brandText span {
+  margin-top: 0.18rem;
+  color: #718196;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+}
+
+.signOutButton {
+  min-height: 2.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #dce5ee;
+  border-radius: 0.75rem;
+  color: #44586d;
+  background: #fff;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.signOutButton:hover:not(:disabled) {
+  border-color: #b8c9d9;
+  background: #f8fafc;
+}
+
+.signOutButton:focus-visible,
+.claimLink:focus-visible,
+.brand:focus-visible {
+  outline: 3px solid rgba(31, 115, 158, 0.34);
+  outline-offset: 3px;
+}
+
+.signOutButton:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.content {
+  width: min(100% - 2.5rem, 68rem);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4.75rem) 0 4rem;
+}
+
+.intro {
+  max-width: 42rem;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #24719a;
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  margin: 0.85rem 0 0.65rem;
+  color: #14283d;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+
+.intro p {
+  max-width: 39rem;
+  margin: 0;
+  color: #63758a;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.message {
+  margin: 0 0 1.25rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid #f1c9c7;
+  border-radius: 0.8rem;
+  color: #9f302a;
+  background: #fff6f5;
+  font-size: 0.9rem;
+}
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.78fr) minmax(0, 1.6fr);
+  gap: 1.25rem;
+}
+
+.identityCard,
+.detailsCard,
+.loadingCard {
+  border: 1px solid #e4ebf2;
+  border-radius: 1.15rem;
+  background: #fff;
+  box-shadow: 0 12px 35px rgba(25, 52, 78, 0.045);
+}
+
+.identityCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.65rem;
+}
+
+.avatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.15rem;
+  border: 5px solid #edf5fa;
+  border-radius: 50%;
+  color: #15587e;
+  background: #dceef7;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.accountStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  color: #26734b;
+  background: #eaf7ef;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.accountStatus span {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: #36a66b;
+}
+
+.identityCard h2 {
+  margin: 1rem 0 0.3rem;
+  color: #182e44;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.memberRole {
+  margin: 0;
+  color: #6a7c90;
+  font-size: 0.88rem;
+}
+
+.identityDivider {
+  width: 100%;
+  height: 1px;
+  margin: 1.35rem 0 1rem;
+  background: #e9eef3;
+}
+
+.identityNote {
+  margin: 0;
+  color: #718196;
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.detailsCard {
+  padding: 1.65rem clamp(1.25rem, 3vw, 2rem);
+}
+
+.cardHeading {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #e9eef3;
+}
+
+.headingIcon,
+.calloutIcon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  color: #216f96;
+  background: #e8f3f8;
+}
+
+.headingIcon {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 0.8rem;
+}
+
+.cardHeading h2 {
+  margin: 0;
+  color: #1a3046;
+  font-size: 1rem;
+}
+
+.cardHeading p {
+  margin: 0.25rem 0 0;
+  color: #7a8999;
+  font-size: 0.79rem;
+}
+
+.detailsList {
+  margin: 0;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.8fr) minmax(0, 1.2fr);
+  gap: 1rem;
+  padding: 1.05rem 0;
+  border-bottom: 1px solid #eef2f6;
+}
+
+.detail:last-child {
+  border-bottom: 0;
+}
+
+.detail dt {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #718196;
+  font-size: 0.81rem;
+}
+
+.detail dt svg {
+  flex: 0 0 auto;
+  color: #8ba0b2;
+}
+
+.detail dd {
+  margin: 0;
+  color: #283e53;
+  font-size: 0.88rem;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.detailsFootnote {
+  margin: 0.75rem 0 0;
+  color: #78899b;
+  font-size: 0.77rem;
+  line-height: 1.55;
+}
+
+.claimCallout {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid #dbe9f1;
+  border-radius: 1rem;
+  background: linear-gradient(110deg, #f0f8fb, #fff);
+}
+
+.calloutIcon {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 0.9rem;
+}
+
+.calloutCopy {
+  flex: 1;
+}
+
+.calloutCopy h2 {
+  margin: 0;
+  color: #1a3046;
+  font-size: 0.98rem;
+}
+
+.calloutCopy p {
+  margin: 0.3rem 0 0;
+  color: #718196;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.claimLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  flex: 0 0 auto;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.95rem;
+  border-radius: 0.75rem;
+  color: #fff;
+  background: #175a7d;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.claimLink:hover {
+  background: #104866;
+  transform: translateY(-1px);
+}
+
+.loadingCard {
+  min-height: 12rem;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.8rem;
+  color: #6b7e91;
+}
+
+.loadingCard p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.spinner {
+  width: 1.7rem;
+  height: 1.7rem;
+  border: 2px solid #dce8ef;
+  border-top-color: #26749a;
+  border-radius: 50%;
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 760px) {
+  .profileGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .identityCard {
+    min-height: 0;
+  }
+
+  .claimCallout {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .calloutCopy {
+    min-width: calc(100% - 4rem);
+  }
+
+  .claimLink {
+    margin-left: 3.8rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .header {
+    min-height: 4.5rem;
+    padding-inline: 1rem;
+  }
+
+  .brand {
+    gap: 0.55rem;
+  }
+
+  .brandMark {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .brandText strong {
+    font-size: 0.65rem;
+  }
+
+  .brandText span {
+    font-size: 0.5rem;
+  }
+
+  .signOutButton {
+    min-height: 2.35rem;
+    padding-inline: 0.65rem;
+    font-size: 0.75rem;
+  }
+
+  .content {
+    width: min(100% - 2rem, 68rem);
+    padding-top: 2.5rem;
+  }
+
+  .detail {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+
+  .claimCallout {
+    padding: 1rem;
+  }
+
+  .claimLink {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 2s;
+  }
+
+  .signOutButton,
+  .claimLink {
+    transition: none;
+  }
+}
