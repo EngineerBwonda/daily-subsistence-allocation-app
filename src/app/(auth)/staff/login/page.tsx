@@ -376,7 +376,7 @@ function LoginContent() {
 
           <div className={styles.loginPrompt}>
             <span>Don&apos;t have an account?</span>
-            <Link href="/register">Create an account</Link>
+            <Link href="/staff/register">Create an account</Link>
           </div>
 
           <div className={styles.securityNote}>
