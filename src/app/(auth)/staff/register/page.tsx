@@ -443,7 +443,7 @@ export default function RegisterPage() {
 
           <div className={styles.loginPrompt}>
             <span>Already have an account?</span>
-            <Link href="/login">Sign in</Link>
+            <Link href="/staff/login">Sign in</Link>
           </div>
 
           <div className={styles.securityNote}>
