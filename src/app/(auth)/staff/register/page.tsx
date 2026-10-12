@@ -313,7 +313,7 @@ export default function RegisterPage() {
 
             {/* ROLE */}
             <div className={styles.inputGroup}>
-              <label htmlFor="role">Staff Role *</label>
+              <label htmlFor="role">Staff role requested *</label>
               <div className={styles.inputWrapper}>
                 <Briefcase size={18} />
                 <select
@@ -323,7 +323,7 @@ export default function RegisterPage() {
                   onChange={handleChange}
                   required
                 >
-                  <option value="member">Administrator</option>
+                  <option value="member">Member</option>
                   <option value="secretary">Secretary</option>
                   <option value="director">Director</option>
                 </select>

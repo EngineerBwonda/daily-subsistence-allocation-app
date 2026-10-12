@@ -1,0 +1,816 @@
+/* ============================================================
+   PAGE
+   ============================================================ */
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(22, 101, 168, 0.14),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #f5f8fc 0%, #edf3fa 100%);
+  padding-bottom: 3rem;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem clamp(1.25rem, 4vw, 3rem);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(15, 81, 126, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: #0e1c2d;
+}
+
+.brandMark {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.7rem;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #0d5fa8, #0b3a66);
+  color: #ffffff;
+  box-shadow: 0 6px 15px rgba(11, 58, 102, 0.25);
+}
+
+.brandText strong,
+.brandText span {
+  display: block;
+}
+
+.brandText strong {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: #0e1c2d;
+}
+
+.brandText span {
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  color: #50647d;
+}
+
+.signOutButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: 0.7rem;
+  border: 1px solid #d7e0ea;
+  background: #ffffff;
+  color: #475467;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.signOutButton:hover {
+  background: #fff1f1;
+  color: #b42318;
+  border-color: #f4c8c8;
+}
+
+/* Content */
+.content {
+  width: min(100%, 78rem);
+  margin: 0 auto;
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Intro */
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: #edf4ff;
+  color: #0f5aa6;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+  letter-spacing: -0.03em;
+  color: #111827;
+}
+
+.intro p {
+  margin: 0;
+  color: #53657d;
+  font-size: 0.9rem;
+  max-width: 60ch;
+}
+
+.refreshButton {
+  margin-top: 0.35rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.7rem;
+  border: 1px solid #cfe0f5;
+  background: #edf4ff;
+  color: #0f5aa6;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.refreshButton:hover:not(:disabled) {
+  background: #dceaff;
+}
+.refreshButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Messages */
+.message {
+  padding: 0.8rem 0.95rem;
+  border-radius: 0.9rem;
+  background: #fff1f1;
+  border: 1px solid #f4c8c8;
+  color: #b42318;
+  font-size: 0.88rem;
+}
+
+/* Loading */
+.loadingCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 81, 126, 0.08);
+  color: #53657d;
+}
+
+.spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgba(29, 122, 223, 0.2);
+  border-top-color: #1d7adf;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Sections */
+.claimSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.sectionHeading span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.6rem;
+  height: 1.6rem;
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  background: #edf4ff;
+  color: #0f5aa6;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Claims list */
+.claimList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.claimRow {
+  background: #ffffff;
+  border: 1px solid #e5eaf1;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(12, 35, 62, 0.05);
+  overflow: hidden;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.claimRow:hover {
+  border-color: #cfe0f5;
+  box-shadow: 0 10px 26px rgba(12, 35, 62, 0.08);
+}
+
+/* Collapsed toggle row */
+.claimToggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+}
+
+.toggleLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.togglePeriod {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #0f5aa6;
+}
+
+.toggleName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toggleRight {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Status pill */
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status[data-status="secretary_review"] {
+  background: #fff7e6;
+  color: #8a6d1c;
+}
+
+.status[data-status="director_review"] {
+  background: #edf4ff;
+  color: #0f5aa6;
+}
+
+.status[data-status="approved"] {
+  background: #f0fdf7;
+  color: #1e7a51;
+}
+
+.status[data-status="rejected"] {
+  background: #fff1f1;
+  color: #b42318;
+}
+
+/* Expanded body */
+.claimBody {
+  border-top: 1px solid #eef3f9;
+  padding: 1.25rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #fbfdff;
+}
+
+/* Schedule header (mimics the paper form title bar) */
+.scheduleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #0f5aa6;
+  flex-wrap: wrap;
+}
+
+.scheduleTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0f5aa6;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.scheduleMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+}
+
+.scheduleMetaLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #6b7c8f;
+}
+
+.scheduleMeta strong {
+  font-size: 0.88rem;
+  color: #111827;
+}
+
+/* Meta strip */
+.metaStrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  font-size: 0.78rem;
+  color: #53657d;
+  padding: 0.75rem 0.95rem;
+  border-radius: 0.75rem;
+  background: #f3f7fb;
+  border: 1px solid #e5eaf1;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.metaItem a {
+  color: #0f5aa6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.metaItem a:hover {
+  text-decoration: underline;
+}
+
+/* TABLE — the key piece that mirrors the paper form */
+.tableWrap {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  border: 1px solid #d7e0ea;
+  background: #ffffff;
+}
+
+.scheduleTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  min-width: 720px;
+}
+
+.scheduleTable thead th {
+  background: #0f5aa6;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  white-space: nowrap;
+}
+
+.scheduleTable thead th:last-child {
+  border-right: none;
+}
+
+.scheduleTable tbody td {
+  padding: 0.65rem 0.75rem;
+  border-top: 1px solid #eef3f9;
+  border-right: 1px solid #eef3f9;
+  color: #17212f;
+  vertical-align: top;
+  line-height: 1.45;
+}
+
+.scheduleTable tbody td:last-child {
+  border-right: none;
+}
+
+.scheduleTable tbody tr:hover {
+  background: #f9fbfe;
+}
+
+/* Week cell */
+.weekCell {
+  font-weight: 700;
+  color: #0b3a66;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  min-width: 140px;
+  background: #f3f7fb;
+  position: relative;
+}
+
+.weekFirstRow .weekCell {
+  border-bottom: 1px solid #d7e0ea;
+}
+
+.chamberTag {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: #0d5fa8;
+  color: #ffffff;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+/* Committee cell */
+.committeeCell {
+  font-weight: 600;
+  color: #111827;
+  min-width: 150px;
+}
+
+/* Date cell */
+.dateCell {
+  font-size: 0.78rem;
+  color: #1f2a3c;
+  min-width: 170px;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  white-space: pre-line;
+}
+
+/* Mode cell */
+.modeCell {
+  min-width: 110px;
+}
+
+.modePill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.modePill[data-mode="physical"] {
+  background: #eafaf1;
+  color: #1e7a51;
+}
+
+.modePill[data-mode="virtual"] {
+  background: #edf4ff;
+  color: #0f5aa6;
+}
+
+/* Sittings cell */
+.sittingCountCell {
+  text-align: center;
+  font-weight: 800;
+  color: #0b3a66;
+  font-size: 0.92rem;
+  min-width: 90px;
+}
+
+.emptyCell {
+  text-align: center;
+  color: #93a0af;
+  padding: 1.5rem;
+  font-style: italic;
+}
+
+/* Summary + declaration */
+.summaryBlock {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 0.85rem;
+}
+
+.summaryCard,
+.declarationCard {
+  padding: 0.9rem 1rem;
+  border-radius: 0.9rem;
+  border: 1px solid #d7e0ea;
+  background: #ffffff;
+}
+
+.declarationCard {
+  background: #fffef5;
+  border-color: #fbeec8;
+}
+
+.summaryLabel {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0f5aa6;
+  margin-bottom: 0.55rem;
+}
+
+.declarationCard .summaryLabel {
+  color: #8a6d1c;
+}
+
+.summaryRows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.summaryRows > div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #53657d;
+}
+
+.summaryRows strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+.summaryTotal {
+  padding-top: 0.5rem;
+  border-top: 1px dashed #d7e0ea;
+}
+
+.summaryTotal span,
+.summaryTotal strong {
+  color: #0b3a66 !important;
+  font-weight: 800;
+}
+
+.declarationText {
+  margin: 0 0 0.6rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #4b3a08;
+}
+
+.signedBy {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #4b3a08;
+}
+
+.signedBy strong {
+  color: #111827;
+}
+
+/* Actions */
+.reviewActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #d7e0ea;
+}
+
+.approveButton,
+.rejectButton,
+.printButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    opacity 0.18s ease;
+  font-family: inherit;
+}
+
+.approveButton {
+  background: linear-gradient(135deg, #0d5fa8 0%, #0b3a66 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(11, 58, 102, 0.2);
+}
+
+.approveButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgba(11, 58, 102, 0.28);
+}
+
+.rejectButton {
+  background: #ffffff;
+  color: #b42318;
+  border: 1px solid #f4c8c8;
+}
+
+.rejectButton:hover:not(:disabled) {
+  background: #fff1f1;
+}
+
+.printButton {
+  background: #ffffff;
+  color: #475467;
+  border: 1px solid #d7e0ea;
+}
+
+.printButton:hover {
+  background: #f3f7fb;
+}
+
+.approveButton:disabled,
+.rejectButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Finalized note */
+.finalizedNote {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.95rem;
+  border-radius: 0.75rem;
+  background: #f3f7fb;
+  border: 1px solid #e5eaf1;
+  color: #53657d;
+  font-size: 0.82rem;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.finalizedNote svg {
+  color: #0f5aa6;
+}
+
+.finalizedNote .printButton {
+  margin-left: auto;
+}
+
+/* Empty state */
+.emptyState {
+  margin: 0;
+  padding: 1.5rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px dashed #cfe0f5;
+  color: #6b7c8f;
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 780px) {
+  .summaryBlock {
+    grid-template-columns: 1fr;
+  }
+
+  .scheduleHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .scheduleMeta {
+    align-items: flex-start;
+  }
+
+  .scheduleTable {
+    min-width: 640px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .header {
+    padding: 0.85rem 1.1rem;
+  }
+
+  .claimToggle {
+    padding: 0.85rem 1rem;
+  }
+  .claimBody {
+    padding: 1rem;
+  }
+
+  .toggleName {
+    font-size: 0.88rem;
+  }
+  .reviewActions {
+    flex-direction: column;
+  }
+  .approveButton,
+  .rejectButton,
+  .printButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Print styles */
+@media print {
+  .header,
+  .intro,
+  .signOutButton,
+  .refreshButton,
+  .reviewActions,
+  .finalizedNote,
+  .claimToggle {
+    display: none !important;
+  }
+
+  .claimRow {
+    border: none;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .page {
+    background: #ffffff;
+    padding: 0;
+  }
+
+  .content {
+    padding: 0;
+    width: 100%;
+  }
+
+  .scheduleTable {
+    font-size: 10pt;
+    min-width: 0;
+  }
+
+  .scheduleTable thead th {
+    background: #0f5aa6 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .modePill,
+  .chamberTag {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

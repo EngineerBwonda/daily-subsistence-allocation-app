@@ -134,12 +134,12 @@ function LoginContent() {
       }
 
       const roleRoutes: Record<string, string> = {
-        member: "/member/dashboard",
-        secretary: "/secretary/dashboard",
-        director: "/director/dashboard",
+        member: "/member/profile",
+        secretary: "/claim-review",
+        director: "/directorb",
       };
 
-      router.replace(roleRoutes[profile.role] || "/member/dashboard");
+      router.replace(roleRoutes[profile.role] || "/member/profile");
     } catch (err) {
       console.error(err);
       setServerError("Something went wrong. Please try again.");

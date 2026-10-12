@@ -1,0 +1,1128 @@
+/* ============================================================
+   TOKENS  (same set as the other pages; dark follows the OS)
+   ============================================================ */
+.app {
+  --bg: #f2f5fa;
+  --surface: #ffffff;
+  --surface-2: #f7f9fc;
+  --line: #e1e7f0;
+  --line-strong: #c9d3e2;
+  --ink: #0d1b2f;
+  --ink-2: #485872;
+  --ink-3: #78879d;
+
+  --primary: #0b2a55;
+  --primary-hover: #123a73;
+  --on-primary: #ffffff;
+  --accent: #1f5fbf;
+  --accent-soft: #e7effc;
+
+  --amber: #9a6b0f;
+  --amber-soft: #fbf2dc;
+  --green: #11784c;
+  --green-soft: #e4f5ec;
+  --red: #b3261e;
+  --red-soft: #fceceb;
+
+  --shadow-sm: 0 1px 2px rgba(13, 27, 47, 0.05);
+  --shadow-md: 0 10px 30px -12px rgba(13, 27, 47, 0.16);
+
+  --radius-lg: 1.1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family:
+    var(--font-manrope),
+    "Manrope",
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 3rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .app {
+    --bg: #080f1c;
+    --surface: #0f1a2d;
+    --surface-2: #132036;
+    --line: #1d2d47;
+    --line-strong: #2b4064;
+    --ink: #e8eef9;
+    --ink-2: #a4b3ca;
+    --ink-3: #72849f;
+
+    --primary: #4f86f0;
+    --primary-hover: #6a9af5;
+    --on-primary: #06111f;
+    --accent: #7aa5f6;
+    --accent-soft: #14284a;
+
+    --amber: #f0bf5c;
+    --amber-soft: #2c2210;
+    --green: #4fd39b;
+    --green-soft: #0e2a21;
+    --red: #ff8a82;
+    --red-soft: #321514;
+
+    --shadow-sm: none;
+    --shadow-md: 0 12px 32px -14px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.app :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   TOP BAR
+   ============================================================ */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem clamp(1rem, 4vw, 2.5rem);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brandMark {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.7rem;
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brandText strong {
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.brandText span {
+  font-size: 0.72rem;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+.topActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ghostBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-2);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.ghostBtn:hover:not(:disabled) {
+  background: var(--surface-2);
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+
+.ghostBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.dangerHover:hover:not(:disabled) {
+  background: var(--red-soft);
+  color: var(--red);
+  border-color: transparent;
+}
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================================
+   SHELL + HEADING
+   ============================================================ */
+.shell {
+  width: min(100% - 2rem, 76rem);
+  margin: 0 auto;
+  padding-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pageHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.roleTag {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.pageHead h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.pageHead p {
+  margin: 0.35rem 0 0;
+  max-width: 58ch;
+  font-size: 0.92rem;
+  color: var(--ink-2);
+}
+
+.search {
+  position: relative;
+  flex: 1 1 14rem;
+  max-width: 18rem;
+  color: var(--ink-3);
+}
+
+.search svg {
+  position: absolute;
+  top: 50%;
+  left: 0.8rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.search input {
+  width: 100%;
+  padding: 0.6rem 0.8rem 0.6rem 2.25rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.search input::placeholder {
+  color: var(--ink-3);
+}
+
+.search input:focus-visible {
+  outline-offset: 0;
+}
+
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0.75rem 0.95rem;
+  border-radius: var(--radius-md);
+  background: var(--red-soft);
+  color: var(--red);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+/* ============================================================
+   KPI TILES
+   ============================================================ */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 1.1rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.kpiTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.kpiIcon {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.6rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.kpiValue {
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.kpiFocus {
+  background: var(--primary);
+  border-color: transparent;
+  color: var(--on-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.kpiFocus .kpiTop {
+  color: color-mix(in srgb, var(--on-primary) 78%, transparent);
+}
+
+.kpiFocus .kpiIcon {
+  background: color-mix(in srgb, var(--on-primary) 16%, transparent);
+  color: var(--on-primary);
+}
+
+.kpiGreen .kpiIcon {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.kpiRed .kpiIcon {
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+/* ============================================================
+   SECTIONS + CLAIM LIST
+   ============================================================ */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionHead h2 {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+.count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.6rem;
+  height: 1.6rem;
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.claimList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.claimRow {
+  border-bottom: 1px solid var(--line);
+}
+
+.claimRow:last-child {
+  border-bottom: none;
+}
+
+.claimRow[data-open="true"] {
+  background: var(--surface-2);
+}
+
+.claimToggle {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto auto;
+  align-items: center;
+  gap: 0.95rem;
+  padding: 0.95rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.claimToggle:hover {
+  background: var(--surface-2);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.claimInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.claimName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.claimPeriod {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink-3);
+}
+
+.claimNights {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.1;
+}
+
+.claimNights strong {
+  font-size: 1.05rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.claimNights span {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--ink-3);
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  background: var(--amber-soft);
+  color: var(--amber);
+  font-size: 0.74rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.statusPill::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.statusPill[data-status="director_review"] {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.statusPill[data-status="approved"] {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.statusPill[data-status="rejected"] {
+  background: var(--red-soft);
+  color: var(--red);
+}
+
+.chevron {
+  color: var(--ink-3);
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+  color: var(--accent);
+}
+
+/* ============================================================
+   EXPANDED CLAIM
+   ============================================================ */
+.claimBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 0.25rem 1.25rem 1.35rem;
+  animation: reveal 0.22s ease-out;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.scheduleHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.scheduleTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.scheduleTitle > span {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.6rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.scheduleTitle h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.scheduleMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.25;
+}
+
+.scheduleMetaLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink-3);
+}
+
+.scheduleMeta strong {
+  font-size: 0.92rem;
+}
+
+.metaStrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.metaChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-2);
+  font-size: 0.76rem;
+}
+
+.metaChip strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.metaChip a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.metaChip a:hover {
+  text-decoration: underline;
+}
+
+/* ----- Attendance table ----- */
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.scheduleTable {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.scheduleTable thead th {
+  padding: 0.65rem 0.85rem;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.scheduleTable thead th:last-child {
+  text-align: right;
+}
+
+.scheduleTable tbody td {
+  padding: 0.7rem 0.85rem;
+  border-top: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.weekFirstRow td {
+  border-top: 1px solid var(--line-strong);
+}
+
+.weekFirstRow:first-child td {
+  border-top: none;
+}
+
+.weekCell {
+  min-width: 9.5rem;
+  background: var(--surface-2);
+  border-right: 1px solid var(--line);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.chamberTag {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.committeeCell {
+  min-width: 9rem;
+  font-weight: 600;
+}
+
+.dateCell {
+  min-width: 6rem;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.modeCell {
+  min-width: 6rem;
+}
+
+.modePill {
+  display: inline-flex;
+  padding: 0.18rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--ink-2);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.modePill[data-mode="physical"] {
+  background: var(--green-soft);
+  border-color: transparent;
+  color: var(--green);
+}
+
+.modePill[data-mode="virtual"] {
+  background: var(--accent-soft);
+  border-color: transparent;
+  color: var(--accent);
+}
+
+.sittingCountCell {
+  min-width: 5rem;
+  text-align: right;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.emptyCell {
+  padding: 1.5rem !important;
+  text-align: center;
+  color: var(--ink-3);
+}
+
+/* ----- Summary + declaration ----- */
+.summaryBlock {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 0.8rem;
+}
+
+.summaryCard,
+.declarationCard {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.declarationCard {
+  background: var(--amber-soft);
+  border-color: transparent;
+}
+
+.summaryLabel {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-2);
+}
+
+.declarationCard .summaryLabel {
+  color: var(--amber);
+}
+
+.summaryRows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.summaryRows > div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+
+.summaryRows strong {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.summaryRows > .summaryTotal {
+  margin-top: 0.2rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.summaryTotal strong {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.declarationText {
+  margin: 0 0 0.6rem;
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.signedBy {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-2);
+}
+
+.signedBy strong {
+  color: var(--ink);
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* ----- Actions ----- */
+.reviewActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.approveButton,
+.rejectButton,
+.printButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.62rem 1.05rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+.approveButton {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.approveButton:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.approveButton:active:not(:disabled),
+.rejectButton:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.rejectButton {
+  background: transparent;
+  color: var(--red);
+  border-color: color-mix(in srgb, var(--red) 35%, transparent);
+}
+
+.rejectButton:hover:not(:disabled) {
+  background: var(--red-soft);
+}
+
+.printButton {
+  margin-left: auto;
+  background: transparent;
+  color: var(--ink-2);
+  border-color: var(--line);
+}
+
+.printButton:hover {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+
+.approveButton:disabled,
+.rejectButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.finalizedNote {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.75rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink-2);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.finalizedNote > svg {
+  color: var(--accent);
+}
+
+/* ============================================================
+   EMPTY + SKELETON
+   ============================================================ */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--ink-2);
+}
+
+.emptyIcon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.4rem;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.empty strong {
+  color: var(--ink);
+  font-size: 0.98rem;
+}
+
+.empty > span:not(.emptyIcon) {
+  font-size: 0.85rem;
+}
+
+.loadingWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skel {
+  display: block;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    90deg,
+    var(--surface-2) 25%,
+    var(--line) 50%,
+    var(--surface-2) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.skelKpi {
+  height: 6.2rem;
+}
+
+.skelPanel {
+  height: 18rem;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    width: min(100% - 1.25rem, 76rem);
+    padding-top: 1.1rem;
+    gap: 1.1rem;
+  }
+
+  .brandText span,
+  .btnLabel {
+    display: none;
+  }
+
+  .search {
+    max-width: none;
+  }
+
+  .claimToggle {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    row-gap: 0.5rem;
+  }
+
+  .claimNights {
+    display: none;
+  }
+
+  .claimToggle .statusPill {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .claimToggle .chevron {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .kpiValue {
+    font-size: 1.7rem;
+  }
+
+  .summaryBlock {
+    grid-template-columns: 1fr;
+  }
+
+  .reviewActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .printButton {
+    margin-left: 0;
+  }
+
+  .scheduleMeta {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app *,
+  .app *::before,
+  .app *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================================
+   PRINT  (prints only the claim that is currently expanded)
+   ============================================================ */
+@media print {
+  .topbar,
+  .pageHead,
+  .kpis,
+  .sectionHead,
+  .alert,
+  .reviewActions,
+  .finalizedNote,
+  .chevron,
+  .claimToggle .statusPill,
+  .claimNights {
+    display: none !important;
+  }
+
+  .claimRow:not([data-open="true"]) {
+    display: none !important;
+  }
+
+  .app {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #f4f6fa;
+    --ink: #000000;
+    background: #ffffff;
+    padding: 0;
+  }
+
+  .shell {
+    width: 100%;
+    padding: 0;
+  }
+
+  .panel {
+    border: none;
+    box-shadow: none;
+  }
+
+  .claimToggle {
+    padding-left: 0;
+  }
+
+  .scheduleTable {
+    font-size: 10pt;
+    min-width: 0;
+  }
+
+  .scheduleTable thead th,
+  .weekCell,
+  .modePill,
+  .chamberTag,
+  .declarationCard {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
