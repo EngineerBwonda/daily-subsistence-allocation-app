@@ -518,6 +518,14 @@
   animation: reveal 0.22s ease-out;
 }
 
+.documentLogo {
+  display: block;
+  width: 112px;
+  height: 112px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
 @keyframes reveal {
   from {
     opacity: 0;
@@ -1072,6 +1080,11 @@
 
   .claimToggle {
     padding-left: 0;
+  }
+
+  .documentLogo {
+    width: 104px;
+    height: 104px;
   }
 
   .scheduleTable {

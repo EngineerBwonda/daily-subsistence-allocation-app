@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -742,6 +743,14 @@ function ClaimReviewPage({ reviewerRole }: PageProps) {
                           className={styles.claimBody}
                           id={`claim-${claim.id}`}
                         >
+                          <Image
+                            src="/senatelogo-removebg-preview.png"
+                            alt="Parliament of Kenya — The Senate"
+                            width={400}
+                            height={400}
+                            className={styles.printLogo}
+                          />
+
                           {/* Schedule header */}
                           <div className={styles.scheduleHeader}>
                             <div className={styles.scheduleTitle}>

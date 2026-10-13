@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import {
-  Landmark,
   CalendarRange,
   Users,
   ClipboardCheck,
@@ -100,6 +100,14 @@ export default function ClaimForm() {
       <div className={styles.sheet}>
         {/* Header */}
         <div className={styles.headerBand}>
+          <Image
+            src="/senatelogo-removebg-preview.png"
+            alt="Parliament of Kenya — The Senate"
+            width={400}
+            height={400}
+            className={styles.documentLogo}
+            priority
+          />
           <div className={styles.stamp}>
             <span className={styles.stampLabel}>Serial No.</span>
             <input
@@ -111,11 +119,6 @@ export default function ClaimForm() {
           </div>
 
           <div className={styles.crestRow}>
-            <Landmark
-              size={38}
-              className={styles.crestIcon}
-              strokeWidth={1.4}
-            />
             <div>
               <div className={styles.institution}>The Senate</div>
               <div className={styles.formTitle}>

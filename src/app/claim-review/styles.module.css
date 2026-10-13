@@ -684,6 +684,10 @@
   animation: reveal 0.22s ease-out;
 }
 
+.printLogo {
+  display: none;
+}
+
 @keyframes reveal {
   from {
     opacity: 0;
@@ -1330,6 +1334,14 @@
 
   .claimToggle {
     padding-left: 0;
+  }
+
+  .printLogo {
+    display: block;
+    width: 104px;
+    height: 104px;
+    object-fit: contain;
+    margin: 0 auto;
   }
 
   .scheduleTable {

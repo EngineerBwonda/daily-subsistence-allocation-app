@@ -47,15 +47,23 @@
   position: relative;
 }
 
-.crestRow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.documentLogo {
+  display: block;
+  width: 112px;
+  height: 112px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+  padding: 3px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 4px;
 }
 
-.crestIcon {
-  color: var(--gold-dim);
-  flex-shrink: 0;
+.crestRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .institution {
