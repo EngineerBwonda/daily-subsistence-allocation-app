@@ -217,6 +217,20 @@
   display: none;
 }
 
+.brandLogoWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.15rem;
+}
+
+.brandLogo {
+  width: auto;
+  max-width: 180px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(11, 58, 102, 0.1));
+}
+
 .formHeader {
   margin-bottom: 1.5rem;
 }

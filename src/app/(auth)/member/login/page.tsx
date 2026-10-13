@@ -213,6 +213,14 @@ export default function MemberLoginPage() {
             </div>
           </Link>
 
+          <div className={styles.brandLogoWrap}>
+            <img
+              src="/senatelogo-removebg-preview.png"
+              alt="Senate Liaison logo"
+              className={styles.brandLogo}
+            />
+          </div>
+
           <motion.div
             className={styles.formHeader}
             initial={{ opacity: 0, y: 20 }}
