@@ -9,6 +9,7 @@ import {
 } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -50,18 +51,20 @@ function LoginContent() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [serverError, setServerError] = useState("");
-  const [showRegisteredBanner, setShowRegisteredBanner] = useState(false);
+  const [showRegisteredBanner, setShowRegisteredBanner] = useState(
+    () => searchParams.get("registered") === "1",
+  );
 
   // Show banner if redirected from register with ?registered=1
   useEffect(() => {
-    if (searchParams.get("registered") === "1") {
-      setShowRegisteredBanner(true);
-      // Clean the URL so a refresh doesn't keep re-showing it
-      window.history.replaceState(null, "", "/login");
-      // Auto-dismiss after 8 seconds
-      const timer = setTimeout(() => setShowRegisteredBanner(false), 8000);
-      return () => clearTimeout(timer);
-    }
+    const shouldShowBanner = searchParams.get("registered") === "1";
+    if (!shouldShowBanner) return;
+
+    // Clean the URL so a refresh doesn't keep re-showing it
+    window.history.replaceState(null, "", "/login");
+    // Auto-dismiss after 8 seconds
+    const timer = setTimeout(() => setShowRegisteredBanner(false), 8000);
+    return () => clearTimeout(timer);
   }, [searchParams]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -235,6 +238,17 @@ function LoginContent() {
               <span>DSA MANAGEMENT</span>
             </div>
           </Link>
+
+          <div className={styles.brandLogoWrap}>
+            <Image
+              src="/senatelogo-removebg-preview.png"
+              alt="Senate Liaison logo"
+              width={180}
+              height={80}
+              priority
+              className={styles.brandLogo}
+            />
+          </div>
 
           <motion.div
             className={styles.formHeader}
