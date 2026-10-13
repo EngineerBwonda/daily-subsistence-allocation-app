@@ -374,10 +374,6 @@ function PrintDocument({ claim }: { claim: Claim }) {
       <h2 className={styles.printTitle}>
         CHAMBER/COMMITTEE ATTENDANCE SCHEDULE
       </h2>
-      <p className={styles.printSenator}>
-        NAME OF SENATOR:{" "}
-        <strong>{claim.claimant_name.toUpperCase()}, MP</strong>
-      </p>
 
       <div className={styles.printTableWrap}>
         <table className={styles.printTable}>
