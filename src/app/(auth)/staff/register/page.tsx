@@ -162,7 +162,7 @@ export default function RegisterPage() {
           <Link href="/" className={styles.logo}>
             <div className={styles.logoMark}>S</div>
             <div>
-              <strong>SENATE LIAISON</strong>
+              <strong>SENATE DIGAC</strong>
               <span>DSA MANAGEMENT SYSTEM</span>
             </div>
           </Link>
@@ -184,7 +184,7 @@ export default function RegisterPage() {
             </h1>
 
             <p>
-              Register for the Senate Liaison Office DSA Management System.
+              Register for the Senate DIGAC Office DSA Management System.
               Submit, review, and approve daily subsistence allowance claims
               through a secure, role-based workflow.
             </p>
@@ -235,7 +235,7 @@ export default function RegisterPage() {
           <Link href="/" className={styles.mobileLogo}>
             <div className={styles.logoMark}>S</div>
             <div>
-              <strong>SENATE LIAISON</strong>
+              <strong>SENATE DIGAC</strong>
               <span>DSA MANAGEMENT</span>
             </div>
           </Link>

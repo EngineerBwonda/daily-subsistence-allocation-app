@@ -133,7 +133,7 @@ export default function MemberLoginPage() {
           <Link href="/" className={styles.logo}>
             <div className={styles.logoMark}>S</div>
             <div>
-              <strong>SENATE LIAISON</strong>
+              <strong>SENATE DIGAC</strong>
               <span>DSA MANAGEMENT SYSTEM</span>
             </div>
           </Link>
@@ -208,7 +208,7 @@ export default function MemberLoginPage() {
           <Link href="/" className={styles.mobileLogo}>
             <div className={styles.logoMark}>S</div>
             <div>
-              <strong>SENATE LIAISON</strong>
+              <strong>SENATE DIGAC</strong>
               <span>DSA MANAGEMENT</span>
             </div>
           </Link>
